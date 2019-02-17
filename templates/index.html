@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<script>
+		if(localStorage.getItem('displayname'))
+		{
+			window.location = "{{ url_for('chatrooms')}}";
+		}
+		function newn(name){
+			localStorage.setItem('displayname',name);
+			window.location = "{{ url_for('chatrooms') }}";
+		}
+	</script>
+	<link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}" type='text/css'/>
+	<title>Flack</title>
+</head>
+
+<body>
+
+  <div class="body"></div>
+		<div class="grad"></div>
+		<div class="header">
+			<div><span>Flack</span></div>
+		</div>
+		<br>
+		<div class="login">
+            <form>
+				<input type="text" placeholder="display name" name="user"><br>
+				<input type="button" value='login' onclick="newn(user.value)">
+		    </form>
+        </div>
+
+</body>
+</html>
